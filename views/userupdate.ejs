@@ -1,0 +1,63 @@
+<%- include("partials/header")%>
+
+<%- include("partials/nav")%>
+<div class="main  h-[90.8vh] w-[99.9%] bg-black bg-no-repeat bg-cover bg-center  bg-[url('https://wallpapercave.com/wp/wp2126146.jpg')] flex">
+  <div class="relative  w-[60%] ml-12">
+
+<div class=" relative  w-[65%] py-2 rounded-xl ml-[15%] flex ">
+
+  <form class=" hidden form-image" action="/image/<%=user._id%>" method="post" enctype="multipart/form-data">
+    <input class="input-image" type="file" name="profilepic">
+  </form>
+  <div class="pic  w-[14vw]">
+    <img class="preview-image ml-8 w-[20vh] h-[20vh] rounded-full object-cover" src="/images/<%=user.profilepic%>" alt="">
+    <h1 class=" rounded-xl  text-2xl font-extrabold text-red-400">
+      delta__man
+    </h1>
+  </div>
+ 
+<div class="relative  w-[22vw] h-[15vh]">
+  <h1 class="text-4xl font-extrabold text-red-600"><%=user.name%></h1>
+  <h2 class="mt-3 text-xl font-bold text-red-400">
+    @<%= user.username %>
+  </h2>
+</div>
+  
+</div>
+  <form action="/update-user/<%=user._id%>" class=" relative  ml-[15%] w-[70%]" method="post">
+    <input class="border-solid border-2 border-black-600    w-[90%] mb-4 boder-boder-zinc-500 p-2 rounded-md" type="text" placeholder="Full name"  value="<%=user.name%>" name="name"> <br>
+    <input class="border-solid border-2 border-black-600    w-[90%] mb-4 boder-boder-zinc-500 p-2 rounded-md" type="text" placeholder="username" value="<%=user.username%>" name="username"><br>
+    <input class="border-solid border-2 border-black-600    w-[90%] mb-4 boder-boder-zinc-500 p-2 rounded-md" type="text" placeholder="email@servive.provider" name="email" value="<%=user.email%>"><br>
+      <button class=" w-[90%] bg-red-300 py-3 mt-5  text-center hover:bg-red-600 rounded text-white bg-red-400">User Details</button>
+  </form>
+</div>
+<div class="right  h-[74vh] w-[40vw]">
+  <h1 class=" rounded-xl  text-2xl font-extrabold text-red-400">
+    Profile Setting
+  </h1>
+  <div class="w-[40%]  mt-1">
+  <a class="text-red-400" href="/reset-password/<%= user._id%>">ResetPassword</a>
+</div>
+<div class="w-[40%]  mt-1">
+  <a class="text-red-400" href="/delete-user/<%= user._id%>">Delete Profile</a>
+</div>
+<div class="w-[40%]  mt-[60%]">
+  <a class="text-red-400" href="/logout-user/<%=user._id%>">Logout</a>
+</div>
+</div>
+</div>
+
+<script>
+  const inputimage = document.querySelector(".input-image");
+  const previewimage = document.querySelector(".preview-image");
+  const formimage = document.querySelector(".form-image");
+  previewimage.addEventListener("click",function(){
+    inputimage.click()
+  })
+
+  inputimage.addEventListener("change",function(){
+    formimage.submit()
+  })
+</script>
+
+<%- include("partials/footer")%>

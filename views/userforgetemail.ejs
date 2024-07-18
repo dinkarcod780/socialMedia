@@ -1,0 +1,18 @@
+<%- include("partials/header")%>
+
+<%- include("partials/nav")%>
+
+
+<div class="bg-red-200 w-[50%] py-2 rounded-xl m-auto">
+  <h1 class="text-center text-4xl font-extrabold text-red-600">Forget Password Reset</h1>
+  
+</div>
+<form action="/forget-email" class="mt-[2%] text-center" method="post">
+  <input class="border-solid border-2 border-black-600 w-[40%] mb-10 boder-boder-zinc-500 p-3 rounded-md" type="email" placeholder="email@existing.user" name="email">
+   <br>
+
+  <button class="container w-[40%] bg-red-300 py-3 mt-5  text-center hover:bg-red-600 rounded text-white bg-red-400">Submit Emai</button>
+
+</form>
+ 
+<%- include("partials/footer")%>

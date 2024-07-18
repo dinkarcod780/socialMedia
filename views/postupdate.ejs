@@ -1,0 +1,49 @@
+<%- include("partials/header")%>
+
+<%- include("partials/nav")%>
+<div class="main h-[90vh] w-[99.9%] bg-black bg-no-repeat bg-cover bg-center  bg-[url('https://www.cloudservus.com/hubfs/DALL%C2%B7E%202023-12-05%2010.55.54%20-%20Create%20a%20sleek%20and%20modern%20blog%20graphic%20for%20a%20post%20about%20Cloud%20Security%20Assessments%2C%20sized%201000x666%20pixels.%20The%20image%20should%20feature%20a%20stylized%20digital.png')] flex">
+  <div class="relative  w-[60%] ml-12">
+
+<div class=" relative  w-[65%] py-2 rounded-xl ml-[15%] flex ">
+
+  <form class=" hidden form-image" action="/post-image/<%=post._id%>" method="post" enctype="multipart/form-data">
+    <input class="input-image" type="file" name="profilepic">
+  </form>
+  <div class="pic  w-[14vw]">
+    <img class="preview-image ml-8 w-[20vh] h-[20vh] rounded-full object-cover" src="/images/<%=post.media%>" alt="">
+    <h1 class=" rounded-xl  text-2xl font-extrabold text-red-400">
+      delta__man
+    </h1>
+  </div>
+ 
+<div class="relative  w-[22vw] h-[15vh]">
+  <h1 class="text-4xl font-extrabold text-red-600"><%=user.name%></h1>
+  <h2 class="mt-3 text-xl font-bold text-red-400">
+    @<%= user.username %>
+  </h2>
+  <h3 class="text-white">Post Update</h3>
+</div>
+  
+</div>
+  <form action="/update-post/<%=post._id%>" class=" relative  ml-[15%] w-[70%]" method="post">
+    <input class="border-solid border-2 border-black-600    w-[90%] mb-4 boder-boder-zinc-500 p-2 rounded-md" type="text" placeholder="title"  value="<%=post.title%>" name="title"> <br>
+      <button class=" w-[90%] bg-red-300 py-3 mt-5  text-center hover:bg-red-600 rounded text-white bg-red-400">Update Post Details</button>
+  </form>
+</div>
+
+</div>
+
+<script>
+  const inputimage = document.querySelector(".input-image");
+  const previewimage = document.querySelector(".preview-image");
+  const formimage = document.querySelector(".form-image");
+  previewimage.addEventListener("click",function(){
+    inputimage.click()
+  })
+
+  inputimage.addEventListener("change",function(){
+    formimage.submit()
+  })
+</script>
+
+<%- include("partials/footer")%>

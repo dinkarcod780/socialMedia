@@ -1,0 +1,25 @@
+<%- include("partials/header")%>
+
+<%- include("partials/nav")%>
+<div class="bg-red-200 w-[50%] py-2 rounded-xl m-auto">
+  <h1 class="text-center text-4xl font-extrabold text-red-600">Register User</h1>
+  
+</div>
+<form action="/register-user" class="mt-[2%] text-center" method="post">
+  <input class="border-solid border-2 border-black-600    w-[40%] mb-4 boder-boder-zinc-500 p-2 rounded-md" type="text" placeholder="Full name" name="name"> <br>
+  <input class="border-solid border-2 border-black-600    w-[40%] mb-4 boder-boder-zinc-500 p-2 rounded-md" type="text" placeholder="username" name="username"><br>
+  <input class="border-solid border-2 border-black-600    w-[40%] mb-4 boder-boder-zinc-500 p-2 rounded-md" type="text" placeholder="email@servive.provider" name="email"><br>
+  <input class="border-solid border-2 border-black-600    w-[40%] mb-4 boder-boder-zinc-500 p-2 rounded-md" type="text" placeholder="********" name="password"> <br>
+ <!-- <div class="w-[40%] text-left m-auto">
+    <a class="text-red-400" href="/forget-password">forget password ?</a>
+  </div> -->
+  <!-- <div class="container w-[40%] bg-red-300 py-3 mt-5 ml-[30%] text-center hover:bg-red-600 rounded text-white bg-red-400"> -->
+    <!-- <a class="" href="/login">Login</a> -->
+    <button class=" w-[40%] bg-red-300 py-3 mt-5  text-center hover:bg-red-600 rounded text-white bg-red-400">Register User</button>
+   </div>
+   <p class="mt-3 w-[40%] text-left m-auto">Already have an account? <a class="text-red-400"
+    href="/login">Login</a>
+</p>
+</form>
+
+<%- include("partials/footer")%>

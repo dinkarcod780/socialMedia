@@ -1,0 +1,21 @@
+<nav class=" container w-[100%] bg-slate-800 flex gap-x-10 font-semibold justify-center py-5 text-red-300  font-normal">
+
+
+   <% if(user){ %>
+    <a class="text-[30px] hover:text-yellow-900" href="/profile">Home</a>
+    <!-- <a class="text-[30px] hover:text-yellow-900" href="/logout-user">Logout</a> -->
+    <a class="text-[30px] hover:text-yellow-900" href="/timeline">Timeline</a>
+
+      
+    <%}else{ %>
+
+    <a class="text-[30px] hover:text-yellow-900" href="/">Home</a>
+
+    <a class="text-[30px] hover:text-yellow-900" href="/login">Login</a>
+      
+    <%} %>
+    <!-- <a class="text-[30px] hover:text-yellow-900" href="/">Home</a> -->
+    <!-- <a class="text-[30px] hover:text-yellow-900" href="/login">Login</a> -->
+    <a class="text-[30px] hover:text-yellow-900" href="/about">About Us</a>
+    <!-- <a class="text-[30px] hover:text-yellow-900" href="/logout-user">Logout</a> -->
+</nav>

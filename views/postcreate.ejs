@@ -1,0 +1,15 @@
+<%- include("partials/header")%>
+
+<%- include("partials/nav")%>
+<div class="bg-red-200 w-[50%] py-2 rounded-xl m-auto">
+  <h1 class="text-center text-4xl font-extrabold text-red-600">Create Post</h1>
+  
+</div>
+<form action="/post-create" class="mt-[2%] text-center" method="post" enctype="multipart/form-data">
+  <input class="border-solid border-2 border-black-600    w-[40%] mb-4 boder-boder-zinc-500 p-2 rounded-md" type="file" name="media"> <br>
+  <input class="border-solid border-2 border-black-600    w-[40%] mb-4 boder-boder-zinc-500 p-2 rounded-md" type="text" placeholder="Title of Post" name="title"><br>
+ 
+    <button class=" w-[40%] bg-red-300 py-3 mt-5  text-center hover:bg-red-600 rounded text-white bg-red-400">Create Post</button>
+</form>
+
+<%- include("partials/footer")%>
